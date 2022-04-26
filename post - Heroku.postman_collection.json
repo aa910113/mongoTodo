@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "43c1540f-0497-411d-98c7-33670f9f0ae4",
+		"name": "todoList - Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取的所有代辦",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mighty-beach-13469.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"mighty-beach-13469",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增代辦",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"tags\": [],\r\n    \"type\": \"group\",\r\n    \"image\": \"test\",\r\n    \"createAt\": \"test\",\r\n    \"content\": \"test\",\r\n    \"likes\": 999,\r\n    \"comments\": 999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mighty-beach-13469.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"mighty-beach-13469",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有代辦",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mighty-beach-13469.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"mighty-beach-13469",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆代辦",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mighty-beach-13469.herokuapp.com/posts/6267f65a14d1bbf12b826410",
+					"protocol": "https",
+					"host": [
+						"mighty-beach-13469",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6267f65a14d1bbf12b826410"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯單筆代辦",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"修改過\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mighty-beach-13469.herokuapp.com/posts/6267f65a14d1bbf12b826410",
+					"protocol": "https",
+					"host": [
+						"mighty-beach-13469",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6267f65a14d1bbf12b826410"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
