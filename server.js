@@ -1,12 +1,19 @@
 const http = require('http');
-const headers = require('./headers');
 const Article = require('./model/article');
 const handleResponse = require('./handleResponse');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+  '<password>',
+  process.env.DATABASE_PASSWORD,
+);
+
 mongoose
-  .connect('mongodb://localhost:27017/homeWork')
-  .then(() => console.log('資料庫連線OK!'));
+  .connect(DB)
+  .then(() => console.log('遠端資料庫連線OK!'));
 
 const requestListener = async (req, res) => {
   let body = '';
@@ -73,4 +80,4 @@ const requestListener = async (req, res) => {
 };
 
 const server = http.createServer(requestListener);
-server.listen(8000);
+server.listen(process.env.PORT || 8000);
